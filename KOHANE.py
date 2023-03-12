@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-__TOKEN__ = "OTY3MzgyODY0MTQyNDM0MzU0.YmPffw.HVPtxka60Y4Ps0HwH6PYDrzvVJ4"
+__TOKEN__ = " Here put my BOT TOKEN "
 
 # command_prefix 是你希望打指令前加的前綴
 bot = commands.Bot(command_prefix="/")
@@ -53,10 +53,9 @@ async def 倍率(ctx, m1, m2, m3, m4, m5):
 @bot.command()
 async def img(ctx, sheetname):
     myWorksheet = GoogleSheets()
-    # nna班表的spreadsheetId 是 1ZXtRzYFYUQeDhz1e9SBg1bNcc9n9eCvdfPD5fw2w1BU
     # range看要讀哪個部分
     data, date = myWorksheet.getWorkSheet(
-        spreadsheetId='1GePauCNE3gMQKWIDOupV0pW1lfQSUW4QLWt8Ho-xGC8',
+        spreadsheetId=' 這邊放上班表的ID ',
         range = sheetname
     )
     # 圖片設置 第一行是因為matplotlib本身沒有中文字 所以有調字型 
@@ -97,7 +96,7 @@ async def 班表查詢(ctx, username):
         # get googlesheet and turn into pandas.Dataframe
         myWorksheet = GoogleSheets()
         data = myWorksheet.getWorkSheet(
-            spreadsheetId='1ZXtRzYFYUQeDhz1e9SBg1bNcc9n9eCvdfPD5fw2w1BU',
+            spreadsheetId=' 這邊放上班表的ID ',
             range=str(f"'car{i + 1}'")
         )
         data.index = data['']
@@ -117,7 +116,7 @@ async def 班表查詢(ctx, username):
     if onCar == False:
         myWorksheet = GoogleSheets()
         data = myWorksheet.getWorkSheet(
-            spreadsheetId='1ZXtRzYFYUQeDhz1e9SBg1bNcc9n9eCvdfPD5fw2w1BU',
+            spreadsheetId=' 這邊放上班表的ID ',
             range=str("候补")
         )
         print(data)
